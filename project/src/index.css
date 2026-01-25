@@ -1,0 +1,174 @@
+:root {
+  --bg-main: #0f0f10;
+  --bg-secondary: #1a1a1d;
+  --bg-card: #1f1f23;
+
+  --text-main: #ffffff;
+  --text-secondary: #b3b3b3;
+
+  --accent: #ffcc00;
+  --accent-hover: #ffd633;
+
+  --border-color: #2a2a2e;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: var(--text-main);
+  background-color: var(--bg-main);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+a {
+  color: var(--text-main);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin: 0 0 0.75rem;
+}
+
+p {
+  color: var(--text-secondary);
+  margin: 0.25rem 0;
+}
+
+button {
+  border-radius: 10px;
+  border: none;
+  padding: 0.55em 1.1em;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--accent);
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.25rem;
+}
+
+.movie-card {
+  background-color: var(--bg-card);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-card-content {
+  padding: 0.75rem;
+}
+
+.movie-card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.movie-card-year {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.rating {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background-color: var(--accent);
+  color: #000;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+input {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+input::placeholder {
+  color: var(--text-secondary);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
