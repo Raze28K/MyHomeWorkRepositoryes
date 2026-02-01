@@ -1,0 +1,46 @@
+.card {
+  padding: 16px;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  background: white;
+}
+
+.title {
+  margin: 0 0 6px;
+}
+
+.price {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.inStock {
+  color: green;
+}
+
+.outOfStock {
+  color: red;
+}
+
+.sale {
+  color: #0057ff;
+}
+
+.noSale {
+  color: #777;
+}
+
+.button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #111;
+  color: white;
+}
+
+.button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
