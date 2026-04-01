@@ -1,0 +1,36 @@
+{% load static %}
+{% block base %}
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        {% block head %}
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>{% block title %}Главная{% endblock %} :: Лист задач</title>
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        {% endblock %}
+    </head>
+    <body>
+        <header class="site-header">
+            <h1>Лист задач</h1>
+            <p class="subtitle">Django + шаблоны + статические файлы</p>
+        </header>
+
+        {% block navbar %}
+            {% include 'inc/main_menu.html' %}
+        {% endblock %}
+
+        {% block main %}
+            <main>
+                {% block content %}
+                    <p>Содержимое базового шаблона</p>
+                {% endblock %}
+            </main>
+        {% endblock %}
+
+        {% block footer %}
+            {% include 'inc/footer.html' %}
+        {% endblock %}
+    </body>
+    </html>
+{% endblock %}

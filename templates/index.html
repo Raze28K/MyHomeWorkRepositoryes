@@ -1,0 +1,20 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}Все задачи{% endblock %}
+
+{% block content %}
+    <h2>Все задачи</h2>
+    {% for bb in bbs %}
+        <article class="task-card">
+            <h3>
+                <a href="{% url 'bboard:bb_detail' bb.pk %}">{{ bb.title }}</a>
+            </h3>
+            <p>{{ bb.content }}</p>
+            <p>Приоритет: {{ bb.price|default:"0" }}</p>
+            <p>Категория: {{ bb.rubric.name }}</p>
+            <p>Создано: {{ bb.published|date:"d.m.Y H:i" }}</p>
+        </article>
+    {% empty %}
+        <p>Пока нет задач. Добавьте первую задачу в меню слева.</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+.site-header {
+    padding: 20px;
+    background: #1d4ed8;
+    color: #fff;
+}
+
+.site-header h1 {
+    margin: 0;
+}
+
+.subtitle {
+    margin: 6px 0 0;
+    opacity: 0.9;
+}
+
+.menu {
+    width: 260px;
+    float: left;
+    min-height: calc(100vh - 96px);
+    background: #e5edff;
+    padding: 14px;
+}
+
+.menu a {
+    display: block;
+    margin: 8px 0;
+    color: #1e3a8a;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.search-form {
+    margin: 12px 0 18px;
+}
+
+.search-form input {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 6px;
+}
+
+.search-form button,
+.task-form button {
+    padding: 8px 12px;
+    border: none;
+    background: #2563eb;
+    color: #fff;
+    cursor: pointer;
+}
+
+main {
+    margin-left: 260px;
+    padding: 20px;
+    min-height: calc(100vh - 180px);
+}
+
+.task-card {
+    background: #fff;
+    border: 1px solid #dbe3f3;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 14px;
+}
+
+.row-a {
+    border-left: 6px solid #3b82f6;
+}
+
+.row-b {
+    border-left: 6px solid #22c55e;
+}
+
+.site-footer {
+    clear: both;
+    padding: 12px 20px;
+    background: #1e293b;
+    color: #e2e8f0;
+    font-size: 14px;
+}

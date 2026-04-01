@@ -1,0 +1,14 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}Задача: {{ bb.title }}{% endblock %}
+
+{% block content %}
+    <article class="task-card">
+        <p>Категория: {{ bb.rubric.name }}</p>
+        <h2>{{ bb.title }}</h2>
+        <p>{{ bb.content }}</p>
+        <p>Приоритет: {{ bb.price|default:"0" }}</p>
+        <p>Создано: {{ bb.published|date:"d.m.Y H:i" }}</p>
+        <p><a href="{% url 'bboard:bb_delete' bb.pk %}">Удалить задачу</a></p>
+    </article>
+{% endblock %}

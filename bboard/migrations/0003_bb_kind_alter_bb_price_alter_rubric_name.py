@@ -1,0 +1,26 @@
+from django.db import migrations, models
+
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+        ('bboard', '0002_rubric_alter_bb_options_alter_bb_content_and_more'),
+    ]
+
+    operations = [
+        migrations.AddField(
+            model_name='bb',
+            name='kind',
+            field=models.CharField(choices=[('b', 'Куплю'), ('s', 'Продам'), ('c', 'Обменяю')], default='s', max_length=1),
+        ),
+        migrations.AlterField(
+            model_name='bb',
+            name='price',
+            field=models.DecimalField(blank=True, decimal_places=2, default=0, max_digits=13, null=True, verbose_name='Цена'),
+        ),
+        migrations.AlterField(
+            model_name='rubric',
+            name='name',
+            field=models.CharField(db_index=True, max_length=20, unique=True, verbose_name='Название'),
+        ),
+    ]

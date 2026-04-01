@@ -1,0 +1,33 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}Демо шаблонных тегов{% endblock %}
+
+{% block content %}
+    <h2>Проверка тегов и фильтров Django</h2>
+    <p>Преподаватель: {{ teacher_name }}</p>
+    <p>Дата и время: {% now "d.m.Y H:i" %}</p>
+
+    <h3>Список задач (теги: for, if, cycle, with)</h3>
+    {% for task in tasks_demo %}
+        <article class="task-card {% cycle 'row-a' 'row-b' %}">
+            {% with short_title=task.title|truncatechars:28 %}
+                <h4>{{ forloop.counter }}. {{ short_title }}</h4>
+            {% endwith %}
+            {% if task.done %}
+                <p>Статус: выполнено</p>
+            {% else %}
+                <p>Статус: в работе</p>
+            {% endif %}
+            <p>Приоритет: {{ task.priority|upper }}</p>
+        </article>
+    {% endfor %}
+
+    <h3>Пустой список (тег: for ... empty)</h3>
+    <ul>
+        {% for item in empty_tasks %}
+            <li>{{ item }}</li>
+        {% empty %}
+            <li>Элементов нет</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

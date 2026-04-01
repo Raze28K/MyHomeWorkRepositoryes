@@ -1,0 +1,21 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}Поиск задач{% endblock %}
+
+{% block content %}
+    <h2>Поиск задач</h2>
+    {% if query %}
+        <p>Результаты для: "{{ query }}"</p>
+        {% for bb in bbs %}
+            <article class="task-card">
+                <h3><a href="{% url 'bboard:bb_detail' bb.pk %}">{{ bb.title }}</a></h3>
+                <p>{{ bb.content }}</p>
+                <p>Категория: {{ bb.rubric.name }}</p>
+            </article>
+        {% empty %}
+            <p>Совпадений не найдено.</p>
+        {% endfor %}
+    {% else %}
+        <p>Введите поисковый запрос в меню слева.</p>
+    {% endif %}
+{% endblock %}

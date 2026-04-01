@@ -1,0 +1,17 @@
+<nav class="menu">
+    <a href="{% url 'bboard:index' %}">Все задачи</a>
+    <a href="{% url 'bboard:add' %}">Добавить задачу</a>
+    <a href="{% url 'bboard:today' %}">На сегодня</a>
+    <a href="{% url 'bboard:stats' %}">Статистика</a>
+    <a href="{% url 'bboard:template_tags_demo' %}">Демо тегов</a>
+    <a href="{% url 'bboard:about' %}">О проекте</a>
+    <form class="search-form" action="{% url 'bboard:search' %}" method="get">
+        <input type="text" name="q" placeholder="Поиск задачи">
+        <button type="submit">Найти</button>
+    </form>
+    {% for rubric in rubrics %}
+        <a href="{% url 'bboard:by_rubric' rubric_id=rubric.pk %}">
+            {{ rubric.name }} ({{ rubric.cnt }})
+        </a>
+    {% endfor %}
+</nav>

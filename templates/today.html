@@ -1,0 +1,17 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}Задачи на сегодня{% endblock %}
+
+{% block content %}
+    <h2>{{ page_title }}</h2>
+    {% for bb in bbs %}
+        <article class="task-card">
+            <h3><a href="{% url 'bboard:bb_detail' bb.pk %}">{{ bb.title }}</a></h3>
+            <p>{{ bb.content }}</p>
+            <p>Приоритет: {{ bb.price|default:"0" }}</p>
+            <p>Категория: {{ bb.rubric.name }}</p>
+        </article>
+    {% empty %}
+        <p>Сегодня задач не добавлено.</p>
+    {% endfor %}
+{% endblock %}

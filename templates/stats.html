@@ -1,0 +1,12 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}Статистика{% endblock %}
+
+{% block content %}
+    <h2>Статистика проекта</h2>
+    <article class="task-card">
+        <p>Всего задач: <strong>{{ total_tasks }}</strong></p>
+        <p>Задач на сегодня: <strong>{{ today_tasks }}</strong></p>
+        <p>Всего категорий: <strong>{{ total_rubrics }}</strong></p>
+    </article>
+{% endblock %}
