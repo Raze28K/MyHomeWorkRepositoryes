@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Главная{% endblock %} :: Доска объявлений</title>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Объявления</h1>
+    </header>
+
+    {% include 'inc/main_menu.html' %}
+
+    <section>
+        {% block content %}
+            <p>Содержимое базового шаблона</p>
+        {% endblock %}
+    </section>
+
+{% comment %}
+<!-- Удалить завтра -->
+<footer>{% now 'd M Y' %}</footer>
+<!-- Удалить завтра -->
+{% endcomment %}
+
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

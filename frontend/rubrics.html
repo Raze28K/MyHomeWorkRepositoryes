@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список рубрик</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <ul id="list"></ul>
+
+    <form id="rubric_form" method="post">
+        <input type="hidden" name="id" id="id">
+        <p>Название: <input name="name" id="name"></p>
+        <p><button type="reset" class="btn btn-secondary btn-sm">Очистить</button>
+            <button type="submit" class="btn btn-primary btn-sm">Сохранить</button></p>
+    </form>
+
+    <script type="text/javascript" src="rubrics.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
